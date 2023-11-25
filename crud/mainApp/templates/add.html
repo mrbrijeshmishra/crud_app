@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    <title>Document</title>
+{% endblock %}
+
+
+{% block content %}
+    <h1>Add Record</h1><br/>
+    <a id='btn' href="/">Home</a><br><br>
+    <form method="post" action="" class="mainform">
+        {% csrf_token %} 
+        <label>Name</label>
+        <input type="text" name="fame" placeholder="Enter Name" required><br/>
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter Email" required><br/>
+        <label>Phone</label>
+        <input type="text" name="phone" placeholder="Enter Mobile number" required><br/>
+        <label>Salary</label>
+        <input type="number" name="salary" placeholder="Enter Salary" required><br/>
+        <label>City</label>
+        <input type="text" name="city" placeholder="Enter City"><br/>
+        <label>State</label>
+        <input type="text" name="state" placeholder="Enter State"><br/>
+        <button type="submit">Add Record</button>
+    </form>
+{% endblock %}

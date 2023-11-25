@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+    {% block title %}
+    <title>Document</title>
+    {% endblock %}
+
+
+{% block content %}
+<h1>Update Employee Record</h1><br>
+<a id="btn" href="/">Home</a><br><br>
+{% if messages %}
+{% for message in messages %}
+    <div class="alert alert-success text-center custom-alert alert-dismissible fade show" role="alert">
+        <strong>{{ message }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>    
+    {% endfor %}
+{% endif %}
+<form method="post" action="" class="mainform">
+    {% csrf_token %} 
+    <label>Name</label>
+    <input type="text" name="name" placeholder="Enter Name" value="{{ndata.name}}" required><br/>
+    <label>Email</label>
+    <input type="email" name="email" placeholder="Enter Email" value="{{ndata.email}}" required><br/>
+    <label>Phone</label>
+    <input type="text" name="phone" placeholder="Enter Mobile number" value="{{ndata.phone}}" required><br/>
+    <label>Salary</label>
+    <input type="number" name="salary" placeholder="Enter Salary" value="{{ndata.sal}}" required><br/>
+    <label>City</label>
+    <input type="text" name="city" placeholder="Enter City" value="{{ndata.city}}" required><br/>
+    <label>State</label>
+    <input type="text" name="state" placeholder="Enter State" value="{{ndata.state}}" required><br/>
+    <button type="submit">Update Record</button>
+</form>
+{% endblock %}
